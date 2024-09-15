@@ -23,7 +23,9 @@ function playRound(humanChoice, computerChoice){
         humanScore ++;
         alert(`It's a Tie! The current score is You: ${humanScore}, Computer: ${computerScore}.`)
         gameWin();
-    }else if((humanChoice === "ROCK" && computerChoice === "PAPER") || (humanChoice === "PAPER" && computerChoice === "SCISSORS") || (humanChoice === "SCISSORS" && computerChoice === "ROCK")){
+    }else if((humanChoice === "ROCK" && computerChoice === "PAPER") ||
+            (humanChoice === "PAPER" && computerChoice === "SCISSORS") ||
+            (humanChoice === "SCISSORS" && computerChoice === "ROCK")){
         computerScore ++;
         alert(`Computer Wins! The current score is You: ${humanScore}, Computer: ${computerScore}.`)
         gameWin();
