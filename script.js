@@ -3,14 +3,6 @@ let computer = "";
 let humanScore = 0;
 let computerScore = 0;
 
-function getHumanChoice(){
-    user = prompt("Please enter rock, paper, or scissors.", "rock").toUpperCase();
-    if(!["ROCK", "PAPER", "SCISSORS"].includes(user.toUpperCase())){
-        getHumanChoice()
-    }
-    return user;
-}
-
 function getComputerChoice(){
     const rpc = ["ROCK", "PAPER", "SCISSORS"];
     computer = rpc[Math.floor(Math.random() * rpc.length)];
@@ -19,36 +11,28 @@ function getComputerChoice(){
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
-        computerScore ++;
-        humanScore ++;
-        alert(`It's a Tie! The current score is You: ${humanScore}, Computer: ${computerScore}.`)
-        gameWin();
+        alert(`It's a Tie!`);
     }else if((humanChoice === "ROCK" && computerChoice === "PAPER") ||
             (humanChoice === "PAPER" && computerChoice === "SCISSORS") ||
             (humanChoice === "SCISSORS" && computerChoice === "ROCK")){
         computerScore ++;
-        alert(`Computer Wins! The current score is You: ${humanScore}, Computer: ${computerScore}.`)
-        gameWin();
+        alert(`Computer Wins!`);
     }else{
         humanScore ++;
-        alert(`You Win! The current score is You: ${humanScore}, Computer: ${computerScore}.`)
-        gameWin();
+        alert(`You Win!`);
     }
 }
 
-function gameWin(){
-    if(humanScore === 5 && computerScore ===5){
-        alert("You both got five points, it's a draw!")
-        return null;
-    }else if(computerScore === 5){
-        alert("The computer got five points, it wins!")
-        return null;
-    }else if(humanScore === 5){
-        alert("You got five points, you win!")
-        return null;
-    }else{
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-}
+const rockBtn = document.querySelector('#rockBtn');
+const paperBtn = document.querySelector('#paperBtn');
+const scissorsBtn = document.querySelector('#scissorsBtn');
 
-playRound(getHumanChoice(), getComputerChoice());
+rockBtn.addEventListener('click', ()=>{btnClick('ROCK')});
+paperBtn.addEventListener('click', ()=>{btnClick('PAPER')});
+scissorsBtn.addEventListener('click', ()=>{btnClick('SCISSORS')});
+
+function btnClick(playerSelection){
+    playRound(playerSelection, getComputerChoice());
+    console.log(playerSelection);
+    console.log(computer);
+}
