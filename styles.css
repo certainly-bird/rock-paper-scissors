@@ -1,3 +1,108 @@
+:root{
+    --background: #2e2e2e;
+    --hover-color: #545454;
+}
+
 body{
-    background-color: rgb(46, 46, 46);
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Anton SC', sans-serif;
+    font-size: 64px;
+    margin: 32px;
+}
+
+.header h1, .header p{
+    margin: 0px;
+}
+
+.header button{
+    height: 100px;
+    width: 200px;
+    border: 6px solid white;
+    background-color: var(--background);
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    font-family: 'Anton SC', sans-serif;
+}
+
+.header button:hover{
+    background-color: var(--hover-color);
+}
+
+.buttons{
+    display: flex;
+}
+
+.btn{
+    width: 200px;
+    height: 200px;
+    background-color: var(--background);
+    border: 6px solid white;
+    border-radius: 10px;
+    color: white;
+    margin: 32px;
+    font-family: 'Anton SC', sans-serif;
+    font-size: 48px;
+}
+
+.btn:hover{
+    background-color: var(--hover-color);
+}
+
+.score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    color: white;
+    font-family: 'Anton SC', sans-serif;
+    font-size: 32px;
+    width: 700px;
+}
+
+.score p{
+    min-width: 100px;
+    text-align: center;
+}
+
+.round{
+    color: white;
+    font-family: 'Anton SC', sans-serif;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 32px;
+}
+
+.round p{
+    min-width: 100px;
+    position: absolute;
+}
+
+#vs{
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+#playerMove{
+    translate: -264px;
+}
+
+#computerMove{
+    translate: 256px;
 }
